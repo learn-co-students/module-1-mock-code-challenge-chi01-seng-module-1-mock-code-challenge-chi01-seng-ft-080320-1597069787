@@ -6,4 +6,27 @@ class Company
     @founding_year = founding_year
   end
 
+  def all
+  end 
+
+  def freebies
+  end 
+
+  def devs
+  end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
+
