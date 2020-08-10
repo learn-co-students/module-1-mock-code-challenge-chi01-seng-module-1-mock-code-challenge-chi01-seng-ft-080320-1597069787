@@ -10,7 +10,11 @@ end
 # This is a convenient place to define variables and/or set up new object instances,
 # so they will be available to test and play around with in your console
 
+#Company Instances 
+google = Company.new("Google", 1990)
 
+#Freebie instances  :item_name, :company, :dev 
+stickers = Freebie.new("stickers", "Google", "Mizzy")
 
 
 
