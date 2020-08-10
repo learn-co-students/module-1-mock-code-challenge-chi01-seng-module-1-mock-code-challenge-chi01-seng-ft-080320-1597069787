@@ -6,10 +6,19 @@ def reload
   load 'config/environment.rb'
 end
 
-# Insert code here to run before hitting the binding.pry
-# This is a convenient place to define variables and/or set up new object instances,
-# so they will be available to test and play around with in your console
 
+#Company instances
+company1 = Company.new("Google", 1998)
+company2 = Company.new("Facebook", 2004)
+
+#Dev instances
+dev1 = Dev.new("Rick")
+dev2 = Dev.new("Morty")
+
+# item_name, company, dev
+#Freebie instances
+free1 = Freebie.new("Sun Glasses", company1, dev1)
+free2 = Freebie.new("T-shirt", company2, dev2)
 
 
 
