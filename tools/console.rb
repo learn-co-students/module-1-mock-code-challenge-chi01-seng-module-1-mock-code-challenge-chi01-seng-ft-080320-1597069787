@@ -10,6 +10,23 @@ end
 # This is a convenient place to define variables and/or set up new object instances,
 # so they will be available to test and play around with in your console
 
+#Company instances
+google = Company.new("google", "1998")
+apple = Company.new("apple", "1976")
+
+
+
+#freebie instances
+freebie_one = Freebie.new("bagpack", Company, Dev)
+freebie_two = Freebie.new("water bottle", Company, Dev)
+
+
+
+#dev instances
+
+roman = Dev.new("Roman")
+scout = Dev.new("Scout")
+
 
 
 
