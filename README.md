@@ -8,6 +8,9 @@ As developers, when you attend hackathons, you'll realize they hand out a lot of
 
 We have three models: `Company`, `Dev`, and `Freebie`
 
+RELATIONSHIP MODEL:
+Company -< Freebies >- Dev
+
 For our purposes, a `Company` has many `Freebie`s, a `Dev` has many `Freebie`s, and a `Freebie` belongs to a `Dev` and to a `Company`.
 
 `Company` - `Dev` is a many to many relationship.
@@ -50,61 +53,61 @@ Some of the methods listed are provided to you in the starter code. You should c
 
 #### Company
 
-- `Company#initialize(name, founding_year)`
+X `Company#initialize(name, founding_year)`
   - should initialize with a name (string) and founding_year (integer)
-- `Company#name`
+X `Company#name`
   - should return the name of the company
-- `Company#founding_year`
+X `Company#founding_year`
   - should return the founding_year
-- `Company.all`
+X `Company.all`
   - Returns an array of all Company instances
 
 #### Dev
 
-- `Dev#initialize(name)`
+X `Dev#initialize(name)`
   - should initialize with a name (string)
-- `Dev#name`
+X `Dev#name`
   - should return the name of the dev
-- `Dev.all`
+X `Dev.all`
   - Returns an array of all Dev instances
 
 #### Freebie
 
-- `Freebie#initialize(item_name, company, dev)`
+X `Freebie#initialize(item_name, company, dev)`
   - should initialize with an item name (string), company (`Company` instance) and dev (`Dev` instance)
-- `Freebie#item_name`
+X `Freebie#item_name`
   - should return the name of the item, ie. `"sticker"` or `"water bottle"`
-- `Freebie.all`
+X `Freebie.all`
   - Returns an array of all Freebie instances
 
 ### Object Relationship Methods
 
 #### Company
 
-- `Company#freebies`
+X `Company#freebies`
   - returns an array of all the freebies given out by the company
-- `Company#devs`
+X `Company#devs`
   - returns a **unique** array of all the devs who received freebie(s) from the company
 
 #### Dev
 
-- `Dev#freebies`
+X `Dev#freebies`
   - returns an array of all the freebies that the dev owns
-- `Dev#companies`
-  - returns a **unique** array of all the companies that the dev received freebie(s) from
+X `Dev#companies`
+  - returns a **unique** array of all the companies that the dev received freebie(s) fro
 
 #### Freebie
 
-- `Freebie#dev`
+X `Freebie#dev`
   - should return the `Dev` instance for this freebie
-- `Freebie#company`
+X `Freebie#company`
   - should return the `Company` instance for this freebie
 
 ### Aggregate and Association Methods
 
 #### Company
 
-- `Company#give_freebie(dev, item_name)`
+X `Company#give_freebie(dev, item_name)`
   - takes a `dev` (an instance of the `Dev` class) and an `item_name` (string) as arguments, and creates a new `Freebie` instance associated with this company and the given dev
 - `Company.oldest_company`
   - returns the `Company` instance with the earliest founding year
@@ -115,14 +118,14 @@ Some of the methods listed are provided to you in the starter code. You should c
 
 - `Dev#received_one?(item_name)`
   - accepts an item_name (string) and returns true if any of the freebies associated with the dev has that item_name, otherwise returns false
-- `Dev#give_away(dev, freebie)`
+X `Dev#give_away(dev, freebie)`
   - accepts a `Dev` instance and a `Freebie` instance, changes the freebie's dev to be the given dev
 - `Dev.freebie_hoarder`
   - returns *one* dev instance for the dev who owns the most amount of freebies
 
 #### Freebie
 
-- `Freebie#print_details`
+X `Freebie#print_details`
   - should return a string formatted as follows: `{insert dev's name} owns a {insert freebie's item_name} from {insert company's name}`
 
 ## Rubric
