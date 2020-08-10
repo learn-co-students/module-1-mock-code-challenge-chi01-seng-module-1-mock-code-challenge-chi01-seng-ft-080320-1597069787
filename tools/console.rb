@@ -22,31 +22,32 @@ d3 = Dev.new('Matilda')
 
 # FREEBIE INSTANCES (item_name, company, each_dev)
 f1 = Freebie.new('watch', c1, d1)
-f2 = Freebie.new('stickers', c2, d3)
-f3 = Freebie.new('water bottle', c2, d3)
+f2 = Freebie.new('stickers', c3, d3)
+f3 = Freebie.new('water bottle', c3, d3)
 f4 = Freebie.new('t-shirt', c3, d2)
 
 # COMPANY INSTANCE METHODS
-# c3.freebies 
-# c2.devs
+# p c3.freebies 
+# p c2.devs
 # p c1.give_freebie(f1, "hoodie")
 
-# # COMPANY CLASS METHODS
+# COMPANY CLASS METHODS
+# Company.oldest_company
+# p Company.most_distributed
 
+# DEV INSTANCE METHODS
+# p d3.freebies 
+# p d1.companies 
+# p d1.received_one?('watch')
+# p d1.give_away(d2, f3)
 
-# # DEV INSTANCE METHODS
-# d3.freebies 
-# d1.companies 
-# d1.received_one?('watch')
+# DEV CLASS METHODS
+# Dev.freebie_hoarder
 
-# # DEV CLASS METHODS
-
-# # FREEBIE INSTANCE METHODS
-# f1.dev 
-# f1.company 
-# f1.print_details
-
-# FREEBIE CLASS METHODS
+# FREEBIE INSTANCE METHODS
+# p f1.dev 
+# p f1.company 
+# p f1.print_details
 
 
 # NOTES
