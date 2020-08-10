@@ -5,12 +5,27 @@ require_relative '../config/environment.rb'
 def reload
   load 'config/environment.rb'
 end
+#company 
+apple = Company.new("Apple", 1995)
+sony = Company.new("Sony", 2000)
+microsoft = Company.new("Microsoft", 1995)
+nintendo = Company.new("Nintendo", 2000)
+uber = Company.new("Uber", 2012)
 
-# Insert code here to run before hitting the binding.pry
-# This is a convenient place to define variables and/or set up new object instances,
-# so they will be available to test and play around with in your console
+#dev
 
+josue = Dev.new("Josue")
+isaac = Dev.new("Isaac")
+andrew = Dev.new("Andrew")
+ruben = Dev.new("Ruben")
+ian = Dev.new("Ian")
 
+#freebie
+toy = Freebie.new("Toy car", uber, josue)
+laptop = Freebie.new("Laptop", apple, isaac)
+microsoft = Freebie.new("Tablet", microsoft, andrew)
+switch = Freebie.new("Switch", nintendo, ruben)
+playstation = Freebie.new("Playstation 5", sony, ian)
 
 
 
