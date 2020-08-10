@@ -6,4 +6,7 @@ class Company
     @founding_year = founding_year
   end
 
+  def a_method
+    "Done"
+  end
 end
