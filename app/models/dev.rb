@@ -1,8 +1,21 @@
+
 class Dev
+  
   attr_reader :name
+
+  @@all = []
 
   def initialize(name)
     @name = name
+
+    @@all << self
   end
 
-end
+  def self.all
+    @@all
+  end
+
+  def freebies
+    
+  end
+end # end of class.
