@@ -10,10 +10,49 @@ end
 # This is a convenient place to define variables and/or set up new object instances,
 # so they will be available to test and play around with in your console
 
+# COMPANY INSTANCES (name, founding_year)
+c1 = Company.new('Pear', 1990)
+c2 = Company.new('Nile', 2000)
+c3 = Company.new('Palm', 2002)
+
+# DEV INSTANCES (name)
+d1 = Dev.new('Natalia')
+d2 = Dev.new('Bruce')
+d3 = Dev.new('Matilda')
+
+# FREEBIE INSTANCES (item_name, company, each_dev)
+f1 = Freebie.new('watch', c1, d1)
+f2 = Freebie.new('stickers', c2, d3)
+f3 = Freebie.new('water bottle', c2, d3)
+f4 = Freebie.new('t-shirt', c3, d2)
+
+# COMPANY INSTANCE METHODS
+# c3.freebies 
+# c2.devs
+# p c1.give_freebie(f1, "hoodie")
+
+# # COMPANY CLASS METHODS
 
 
+# # DEV INSTANCE METHODS
+# d3.freebies 
+# d1.companies 
+# d1.received_one?('watch')
 
+# # DEV CLASS METHODS
+
+# # FREEBIE INSTANCE METHODS
+# f1.dev 
+# f1.company 
+# f1.print_details
+
+# FREEBIE CLASS METHODS
+
+
+# NOTES
+# Company -< Freebie >- Dev
+# Freebie is the joiner
 
 # ===== WARNING! DO NOT EDIT BELOW THIS LINE ===== #
-binding.pry
-0
+# binding.pry
+# 0
