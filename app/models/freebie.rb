@@ -1,6 +1,7 @@
 class Freebie
 
-    attr_reader :item_name, :company, :dev
+    attr_reader :item_name, :company
+    attr_accessor :dev
 
     @@all = []
 

@@ -1,4 +1,5 @@
 class Company
+  
   attr_reader :name, :founding_year
 
   @@all = []
@@ -17,25 +18,27 @@ class Company
   end
 
   def devs
-    my_devs = []
-    self.freebies.map do |freebie_instance|
-      if(freebie_instance.company == self)
-        my_devs << freebie_instance.dev
+    freebie_array = self.freebies.map do |freebie_instance|
+      freebie_instance.dev
     end
-    end
-  my_devs.uniq
+    freebie_array.uniq
   end
 
-  def give_freebie(dev= "dev1", item_name= "Laptop")
+  def give_freebie(dev, item_name)
     Freebie.new(item_name, self, dev)
   end
 
-  def self.most_distributed
-    self.all.select do |with_most_freebies|
-      with_most_freebies.freebies == true
+  def self.oldest_company
+    Company.all.min_by do |company_instance|
+    company_instance.founding_year
     end
-    binding.pry
   end
+
+  def self.most_distributed
+    Company.all.max_by do |company_instance|
+      company_instance.freebies.count
+  end
+end
 
   def self.all
     @@all

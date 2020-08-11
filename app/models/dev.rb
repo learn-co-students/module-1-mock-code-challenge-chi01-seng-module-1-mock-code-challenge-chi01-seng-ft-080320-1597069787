@@ -1,4 +1,5 @@
 class Dev
+  
   attr_reader :name
 
   @@all = []
@@ -10,36 +11,33 @@ class Dev
   end
 
   def freebies
-      Freebie.all.select do |freebie_instance|
+    Freebie.all.select do |freebie_instance|
       freebie_instance.dev == self
-      end
+    end
   end
-
+  
   def companies
-    my_companies = []
-    self.freebies.map do |freebie_instance|
-      if (freebie_instance.dev == self)
-      my_companies << freebie_instance.company
+    freebie_array2 = self.freebies.map do |freebie_instance|
+      freebie_instance.company
     end
-  end
-    my_companies.uniq
+    freebie_array2.uniq
   end
 
-  def received_one?(item_name= "Cup")
-      if (item_name == self.freebies[0].item_name)
-        true
-      else
-        false
+  def received_one?(item_name)
+    self.freebies.any? do |freebie_instance|
+      freebie_instance.item_name == item_name
     end
   end
 
-  def give_away(dev= "dev2", freebie= "Cup")
-    Freebie.dev = "ram"
+  def give_away(dev, freebie)
+    if freebie.dev == self 
+      freebie.dev = dev
+    end
   end
 
   def self.freebie_hoarder
-    self.all.select do |freebie_hoarder|
-      freebie_hoarder.dev == self
+    Dev.all.max_by do |freebie_hoarder|
+      freebie_hoarder.freebies.count
     end
   end
 
